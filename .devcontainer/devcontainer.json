@@ -1,0 +1,9 @@
+{
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "conda",
+    "workspaceFolder": "/work",
+    "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+    ]
+}

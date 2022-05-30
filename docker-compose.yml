@@ -1,0 +1,20 @@
+version: "3"
+services: 
+  conda:
+    image: "continuumio/anaconda3"
+    volumes:
+      - ./:/work
+    command: >
+      bash -c "\
+        conda install pytorch torchvision -c pytorch -y --quiet && \
+        conda install jupyter -y --quiet && \
+        mkdir -p /work && \
+        jupyter notebook --notebook-dir=/work --ip='*' --port=8888 --no-browser --allow-root \
+      "
+    ports:
+      - 10088:8888
+
+# https://hub.docker.com/r/continuumio/anaconda3
+# https://qiita.com/fuku_tech/items/6752b00770552bf4f46b
+
+# http://7dae9a493ca7:8888/?token=<TOKEN>
